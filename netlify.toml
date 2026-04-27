@@ -1,0 +1,16 @@
+[build]
+  command = ""
+  publish = "."
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Stockfish Worker + SharedArrayBuffer için ZORUNLU header'lar
+[[headers]]
+  for = "/*"
+  [headers.values]
+    "Cross-Origin-Opener-Policy" = "same-origin"
+    "Cross-Origin-Embedder-Policy" = "require-corp"
+    "Cross-Origin-Resource-Policy" = "cross-origin"
