@@ -1,0 +1,14 @@
+[build]
+  command = ""
+  publish = "."
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    "Cross-Origin-Opener-Policy" = "same-origin"
+    # COEP kapatıldı çünkü Worker sorun çıkarıyor
