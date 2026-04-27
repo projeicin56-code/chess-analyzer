@@ -1,0 +1,22 @@
+[build]
+  command = ""
+  publish = "."
+
+# SPA için (opsiyonel ama genelde faydalı)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Stockfish için zorunlu COOP + COEP header'ları (SharedArrayBuffer çalışması için)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    "Cross-Origin-Opener-Policy" = "same-origin"
+    "Cross-Origin-Embedder-Policy" = "require-corp"
+
+# WASM dosyaları için MIME type düzeltmesi
+[[headers]]
+  for = "/*.wasm"
+  [headers.values]
+    "Content-Type" = "application/wasm"
