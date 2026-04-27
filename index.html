@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satranç Analiz Merkezi</title>
+   
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.css">
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.js"></script>
+</head>
+<body>
+    <h2>♟️ Satranç Analiz Uygulaması</h2>
+    <div id="loading">Motor Yükleniyor... Lütfen Bekleyin.</div>
+   
+    <div class="container">
+        <div id="board" style="width: 400px"></div>
+        <div class="side">
+            <div class="eval-box">
+                <div id="evalBar">
+                    <div id="evalFill"></div>
+                </div>
+                <div id="evalText">0.00</div>
+            </div>
+            <button id="analyzeBtn">Analiz Et</button>
+            <button id="resetBtn">Tahtayı Sıfırla</button>
+            <div style="margin-top: 10px;">
+                <label for="depth">Analiz Derinliği:</label>
+                <input id="depth" type="range" min="8" max="20" value="15">
+                <div>Derinlik: <span id="depthVal">15</span></div>
+            </div>
+            <div id="bestMove" style="margin-top: 15px; font-weight: bold; color: #00ff00;"></div>
+            <h4>Hamle Geçmişi</h4>
+            <div id="history"></div>
+        </div>
+    </div>
+
+    <!-- app.js EN SONDA olsun -->
+    <script src="app.js"></script>
+</body>
+</html>
